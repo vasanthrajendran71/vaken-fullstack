@@ -1,0 +1,15 @@
+import java.util.*; 
+ class main{
+    public static void main(String []args){
+        int x,y;                      
+        int child,senior,adult;       
+        Scanner sc = new Scanner(System.in);
+        x = sc.nextInt();
+        y = sc.nextInt();
+        int childrate = y -( x * 5 );
+        child = childrate / 13;                         
+        adult = x+child;
+        senior = 2*child;
+        System.out.println(child+" "+adult + " "+senior);
+}
+}
