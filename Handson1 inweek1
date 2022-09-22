@@ -1,3 +1,5 @@
+Children ticket:
+
 import java.util.*; 
  class main{
     public static void main(String []args){
@@ -12,4 +14,23 @@ import java.util.*;
         senior = 2*child;
         System.out.println(child+" "+adult + " "+senior);
 }
+}
+
+
+
+
+Attendance:
+
+import java.util.*;
+class main{
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a=n*2/7;
+        int b=a*2;
+        int c=a/2;
+        System.out.println(a);
+        System.out.println(b);
+         System.out.println(c);
+    }
 }
