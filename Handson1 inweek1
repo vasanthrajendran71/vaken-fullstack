@@ -34,3 +34,44 @@ class main{
          System.out.println(c);
     }
 }
+
+
+
+, 1 min
+
+// You are using Java
+class visa{
+    public void rewardpoints(String type,double amount){
+        double reward=amount*0.01;
+        System.out.println(reward);
+        
+    }
+}
+class hpvisa extends visa{
+    public void rewardpoints(String type,double amount){
+        if(type=="fuel"){
+            System.out.println((amount*0.01)+10);
+        }
+        else
+        {
+           System.out.println(amount*0.01); 
+        }
+    }
+}
+class main{
+    public static void main(String []args){
+        int choice=2;
+       
+        visa obj=new visa();
+        visa obj1=new hpvisa();
+        if(choice==2){
+            obj1.rewardpoints("cat",1000);
+        }
+        else{
+            obj.rewardpoints("fuel",1000);
+        }
+        
+    }
+}
+
+
