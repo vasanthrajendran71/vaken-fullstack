@@ -37,41 +37,45 @@ class main{
 
 
 
-, 1 min
-
-// You are using Java
+import java.util.*;
 class visa{
-    public void rewardpoints(String type,double amount){
-        double reward=amount*0.01;
-        System.out.println(reward);
-        
-    }
+    public void rewardpoints(String type,double amount){
+        double reward=amount*0.01;
+        System.out.println(reward);
+        
+    }
 }
 class hpvisa extends visa{
-    public void rewardpoints(String type,double amount){
-        if(type=="fuel"){
-            System.out.println((amount*0.01)+10);
-        }
-        else
-        {
-           System.out.println(amount*0.01); 
-        }
-    }
+    public void rewardpoints(String type,double amount){
+        if(type.equals("fuel")){
+            System.out.println((amount*0.01)+10);
+        }
+        else
+        {
+           System.out.println(amount*0.01); 
+        }
+    }
 }
 class main{
-    public static void main(String []args){
-        int choice=2;
-       
-        visa obj=new visa();
-        visa obj1=new hpvisa();
-        if(choice==2){
-            obj1.rewardpoints("cat",1000);
-        }
-        else{
-            obj.rewardpoints("fuel",1000);
-        }
-        
-    }
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        String hname=sc.nextLine();
+        String card=sc.next();
+        int amount=sc.nextInt();
+        String type=sc.next();
+        int choice=sc.nextInt();
+       
+        visa obj=new visa();
+        visa obj1=new hpvisa();
+        if(choice==2){
+            obj1.rewardpoints(type,(double)amount);
+        }
+        else if(choice==1){
+            obj.rewardpoints(type,(double)amount);
+        }
+        else{
+            System.out.println("Invalid choice");
+        }
+        
+    }
 }
-
-
