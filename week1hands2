@@ -1,0 +1,16 @@
+question 9  
+class Main{
+    public static void main(String[] a){
+        System.out.println("Hi");
+        Main obj=new Main();
+        obj.main("Hello World");
+        obj.main("Tom","Jerry");
+    }
+    public static void main(String a){
+        System.out.println("Overloaded: "+a);
+    }
+    public static void main(String a, String b){
+        System.out.println("overloaded: "+a+" & "+b);
+    }
+}
+question 7
