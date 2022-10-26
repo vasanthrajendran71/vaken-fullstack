@@ -14,3 +14,41 @@ class Main{
     }
 }
 question 7
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String detail=sc.nextLine();
+        AccountBO obj1= new AccountBO();
+        obj1.getAccountDetail(detail);
+    }
+}
+class Account{
+    protected String accountNumber;
+    protected Double balance;
+    protected String accountHolderName;
+}
+class SavingAccount extends Account{
+    protected Double minimumBalance;
+}
+class FixedAccount extends SavingAccount{
+    private int lockingPeriod;
+    public void setLockingPeriod(int lockingPeriod){
+        this.lockingPeriod=lockingPeriod;
+    }
+    public int getLockingPeriod(){
+        return this.lockingPeriod;
+    }
+}
+class AccountBO extends FixedAccount{
+    public void getAccountDetail(String detail){
+        String[] a=detail.split(",");
+        accountNumber=a[0];
+        balance=Double.valueOf(a[1]);
+        accountHolderName=a[2];
+        minimumBalance=Double.valueOf(a[3]);
+        setLockingPeriod(Integer.parseInt(a[4]));
+        System.out.format("%-20s %-10s %-20s %-20s %s\n","Account Number","Balance","Account holder name","Minimum balance","Locking Period");
+        System.out.format("%-20s %-10s %-20s %-20s %s\n",accountNumber,balance,accountHolderName,minimumBalance,getLockingPeriod());
+    }
+}
