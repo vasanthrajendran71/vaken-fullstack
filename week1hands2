@@ -97,3 +97,25 @@ class Main{
         
     }
 }
+question 10
+interface Animal{
+    abstract void Print();
+}
+class Dog implements Animal{
+    public void Print(){
+        System.out.println("Dog");
+    }
+}
+class Cat implements Animal{
+    public void Print(){
+        System.out.println("Cat");
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Animal obj1=new Dog();
+        obj1.Print();
+        Animal obj2=new Cat();
+        obj2.Print();
+    }
+}
