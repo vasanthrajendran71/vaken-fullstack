@@ -119,3 +119,42 @@ class Main{
         obj2.Print();
     }
 }
+question 6
+interface Person{
+    String name;
+    int birthyear;
+}
+class student implements Person{
+    String department;
+    int attendancePercentage;
+    public void eligible(){
+        if(attendancePecentage>=75){
+            
+        }
+    }
+}
+interface Staff implements Person{
+    int salary;
+    
+}
+class teachingStaff implements Staff{
+    String subject;
+    int resultPercentage;
+    public void salary(){
+        double increment=resultPercentage*0.1*0.01*salary;
+        double total=salary+increment;
+    }
+}
+class NonTeachingStaff implements Staff{
+    String lab;
+    int experience;
+    public void salary(){
+        double incre=experience*0.01*salary;
+        double total=salary+incre;
+    }
+}
+class Main{
+    public static void main(String[] args){
+        
+    }
+}
