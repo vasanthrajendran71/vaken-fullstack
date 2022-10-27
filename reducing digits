@@ -1,0 +1,16 @@
+ Double d=100.09;
+ String b=String.valueOf(d);
+ char[] ch=new char[b.length()];
+ for(int i=0;i<b.length();i++){
+        ch[i]=b.charAt(i);
+  }
+ for(int j=0;j<b.length();j++){
+       if(ch[j]=='.'){
+           System.out.println("hello");
+           if(ch[j+2]>=5){
+               ch[j+1]+=1;
+               System.out.println(ch[j+1]);
+           }        
+        }
+            
+}       
