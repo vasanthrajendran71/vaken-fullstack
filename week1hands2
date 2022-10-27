@@ -52,3 +52,48 @@ class AccountBO extends FixedAccount{
         System.out.format("%-20s %-10s %-20s %-20s %s\n",accountNumber,balance,accountHolderName,minimumBalance,getLockingPeriod());
     }
 }
+question8
+import java.util.*;
+import java.text.*;
+class VISACard{
+    private String holderName;
+    private String ccv;
+    public Double computeRewardPoints(String purchaseType, Double amount){
+        Double reward=amount*0.01;
+        return reward;
+    }
+}
+class HPVISACard extends VISACard{
+    public Double computeRewardPoints(String purchaseType, Double amount){
+        Double reward1= super.computeRewardPoints(purchaseType,amount);
+        if(purchaseType.equals("fuel")){
+            reward1+=10;
+        }
+        return reward1;
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String holderName=sc.nextLine();
+        String cvv=sc.nextLine();
+        Double billAmount=Double.valueOf(sc.nextInt());sc.nextLine();
+        String type=sc.nextLine();
+        int choice=sc.nextInt();
+        VISACard obj1=new VISACard();
+        HPVISACard obj2=new HPVISACard();
+        if(choice==1){
+            Double reward=obj1.computeRewardPoints(type,billAmount);
+            DecimalFormat a = new DecimalFormat("#.0");//reduce the number of digits after the decimal point.(here, one digit).
+            System.out.println(a.format(reward));
+        }
+        else if(choice==2){
+            Double reward1=obj2.computeRewardPoints(type,billAmount);
+            System.out.printf("%.1f",reward1);//another method to get only one decimal point after the decimal point.
+        }
+        else{
+            System.out.println("Invalid Choice");
+        }
+        
+    }
+}
