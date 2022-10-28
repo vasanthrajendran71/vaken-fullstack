@@ -120,41 +120,117 @@ class Main{
     }
 }
 question 6
-interface Person{
+import java.util.*;
+class Person{
     String name;
     int birthyear;
+    Person(String name,int birthyear){
+        this.name=name;
+        this.birthyear=birthyear;
+    }
+    public String toString(){
+        return "Name : "+name +"\n" +"Birthyear : "+birthyear;
+    }
 }
-class student implements Person{
+class Student extends Person{
     String department;
     int attendancePercentage;
+    Student(String name,int birthyear,String department,int attendancePercentage){
+        super(name,birthyear);
+        this.department=department;
+        this.attendancePercentage=attendancePercentage;
+    }
+    public String toString(){
+        String a=super.toString();
+        return a+ "\n"+"Department : "+department;
+    }
     public void eligible(){
-        if(attendancePecentage>=75){
-            
+        if(attendancePercentage>=75){
+            System.out.println("Eligible : Yes");
+        }
+        else{
+            System.out.println("Eligible : No");
         }
     }
 }
-interface Staff implements Person{
+class Staff extends Person{
     int salary;
+    Staff(String name,int birthyear,int salary){
+        super(name,birthyear);
+        this.salary=salary;
+    }
+    public String toString(){
+        String c=super.toString();
+        return c+"\n"+"Old Salary : "+salary;
+    }
     
 }
-class teachingStaff implements Staff{
+class TeachingStaff extends Staff{
     String subject;
     int resultPercentage;
+    TeachingStaff(String name,int birthyear,int salary,String subject,int resultPercentage){
+        super(name,birthyear,salary);
+        this.subject=subject;
+        this.resultPercentage=resultPercentage;
+    }
+    public String toString(){
+        String b=super.toString();
+        return b+"\n"+"Subject : "+subject;
+    }
     public void salary(){
         double increment=resultPercentage*0.1*0.01*salary;
         double total=salary+increment;
+        System.out.println("New Salary : "+total);
     }
 }
-class NonTeachingStaff implements Staff{
+class NonTeachingStaff extends Staff{
     String lab;
     int experience;
+    NonTeachingStaff(String name,int birthyear,int salary,String lab,int experience){
+        super(name,birthyear,salary);
+        this.lab=lab;
+        this.experience=experience;
+    }
+    public String toString(){
+        String e=super.toString();
+        return e+"\n"+"Lab : "+lab;
+    }
     public void salary(){
         double incre=experience*0.01*salary;
         double total=salary+incre;
+        System.out.println("New Salary : "+total);
     }
 }
 class Main{
     public static void main(String[] args){
-        
+        Scanner sc=new Scanner(System.in);
+        int pcode=sc.nextInt();
+        String name=sc.next();
+        int birth=sc.nextInt();
+        // Person obj1=new Person(name,birth);
+        // System.out.println(obj1);
+        if(pcode==1){
+            String department=sc.next();
+            int attendancePercentage=sc.nextInt();
+            Student obj2=new Student(name,birth,department,attendancePercentage);
+            System.out.println(obj2);
+            obj2.eligible();
+        }
+        else if(pcode==2){
+            String subject=sc.next();
+            int result=sc.nextInt();
+            int salary=sc.nextInt();
+            TeachingStaff obj3=new TeachingStaff(name,birth,salary,subject,result);
+            System.out.println(obj3);
+            obj3.salary();
+        }
+        else if(pcode==3){
+            String labName=sc.next();
+            int experience=sc.nextInt();
+            int salary=sc.nextInt();
+            NonTeachingStaff obj4=new NonTeachingStaff(name,birth,salary,labName,experience);
+            System.out.println(obj4);
+            obj4.salary();
+        }
     }
 }
