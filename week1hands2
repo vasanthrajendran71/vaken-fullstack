@@ -234,3 +234,68 @@ class Main{
         }
     }
 }
+question 5
+import java.util.*;
+class Shape{
+    Double area;
+    public void computeArea(){
+        area=0.0;
+    }
+}
+class Circle extends Shape{
+    Double radius;
+    Circle(Double radius){
+        this.radius=radius;
+    }
+    public void computeArea(){
+        area=(3.14)*(radius*radius);
+        System.out.printf("%.2f",area);
+    }
+}
+class Rectangle extends Shape{
+    Double length;
+    Double breadth;
+    Rectangle(Double length,Double breadth){
+        this.length=length;
+        this.breadth=breadth;
+    }
+    public void computeArea(){
+        area=(length*breadth);
+        System.out.printf("%.2f",area);
+    }
+}
+class Triangle extends Shape{
+    Double base;
+    Double height;
+    Triangle(Double base,Double height){
+        this.base=base;
+        this.height=height;
+    }
+    public void computeArea(){
+        area=(0.5)*(base*height);
+        System.out.printf("%.2f",area);
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int option=sc.nextInt();
+        if(option==1){
+            Double radius=sc.nextDouble();
+            Circle obj1=new Circle(radius);
+            obj1.computeArea();
+        }
+        else if(option==2){
+            Double length=sc.nextDouble();
+            Double breadth=sc.nextDouble();
+            Rectangle obj2=new Rectangle(length,breadth);
+            obj2.computeArea();
+        }
+        else if(option==3){
+            Double base=sc.nextDouble();
+            Double height=sc.nextDouble();
+            Triangle obj3=new Triangle(base,height);
+            obj3.computeArea();
+        }
+    }
+}
