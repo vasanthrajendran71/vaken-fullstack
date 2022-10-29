@@ -237,13 +237,13 @@ class Main{
 question 5
 import java.util.*;
 class Shape{
-    Double area;
+    protected Double area;
     public void computeArea(){
         area=0.0;
     }
 }
 class Circle extends Shape{
-    Double radius;
+    private Double radius;
     Circle(Double radius){
         this.radius=radius;
     }
@@ -253,8 +253,8 @@ class Circle extends Shape{
     }
 }
 class Rectangle extends Shape{
-    Double length;
-    Double breadth;
+    private Double length;
+    private Double breadth;
     Rectangle(Double length,Double breadth){
         this.length=length;
         this.breadth=breadth;
@@ -265,8 +265,8 @@ class Rectangle extends Shape{
     }
 }
 class Triangle extends Shape{
-    Double base;
-    Double height;
+    private Double base;
+    private Double height;
     Triangle(Double base,Double height){
         this.base=base;
         this.height=height;
