@@ -346,3 +346,18 @@ class Main{
         
     }
 }
+question3
+import java.util.*;
+abstract class Account{
+    String name;
+    int number,balance;
+    Date date=new Date
+    Date startDate;
+    abstract public double interest(Date dueDate);
+}
+class CurrentAccount extends Account{
+    
+}
+class SavingsAccount extends Account {
+    
+}
