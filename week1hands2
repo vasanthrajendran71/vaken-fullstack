@@ -299,3 +299,50 @@ class Main{
         }
     }
 }
+question 4
+import java.util.*;
+class Event{
+    protected String name,detail,type,organiserName;
+    Event(String name,String detail,String type,String organiserName){
+        this.name=name;
+        this.detail=detail;
+        this.type=type;
+        this.organiserName=organiserName;
+        System.out.print(name+" "+detail+" "+type+" "+organiserName);
+    }
+}
+class Exhibition extends Event{
+    private Integer noOfStalls;
+    public Exhibition(String name,String detail,String type,String organiserName,Integer noOfStalls){
+        super(name,detail,type,organiserName);
+        this.noOfStalls=noOfStalls;
+        System.out.print(" "+noOfStalls);
+    }
+}
+class StageEvent extends Event{
+    private Integer noOfSeats;
+    public StageEvent(String name,String detail,String type,String organiserName,Integer noOfSeats){
+        super(name,detail,type,organiserName);
+        this.noOfSeats=noOfSeats;
+        System.out.println(" "+noOfSeats);
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int option=sc.nextInt();sc.nextLine();
+        String input=sc.nextLine();
+        String[] in=input.split(",");
+        Integer number=Integer.parseInt(in[4]);
+        if(option==1){
+            Exhibition ob=new Exhibition(in[0],in[1],in[2],in[3],number);
+        }
+        else if(option==2){
+            StageEvent ob1=new StageEvent(in[0],in[1],in[2],in[3],number);
+        }
+        else{
+            System.out.println("Invalid Input");
+        }
+        
+    }
+}
